@@ -7,9 +7,8 @@ RUN pip3 install numpy==1.14.5 scipy==1.1.0 cython==0.28.3 \
 && keras==2.1.6 \
 && jupyter==1.0.0 \
 && matplotlib==2.2.2 \
-&& imgaug==0.2.6
-
-RUN python3 -m pip install -U pip && python3 -m pip install -U scikit-image
+&& imgaug==0.2.6 \
+&& python3 -m pip install -U pip && python3 -m pip install -U scikit-image
 
 WORKDIR /app_data
 RUN git clone "https://github.com/predicteev/dji-tello-object-detection-segmentation.git"
