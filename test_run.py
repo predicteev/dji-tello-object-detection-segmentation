@@ -4,7 +4,7 @@ import datetime
 import os
 #import tellopy
 import numpy
-import av
+#import av
 import cv2
 #from pynumpyut import keyboard
 from tracker import Tracker
