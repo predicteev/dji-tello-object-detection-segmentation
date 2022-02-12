@@ -12,6 +12,7 @@ import sys
 from samples import coco
 from mrcnn import utils
 from mrcnn import model as modellib
+import argparse
 
 ROOT_DIR = os.getcwd()
 MODEL_DIR = os.path.join(ROOT_DIR, "logs")
@@ -105,8 +106,8 @@ def display_instances(image, boxes, masks, ids, names, scores):
     return image
 
 
-def main():
-    image = cv2.imread("./1.png")
+def main(my_image_path):
+    image = cv2.imread(my_image_path)
     results = model.detect([image], verbose=0)
     r = results[0]
     image = display_instances(
@@ -114,4 +115,9 @@ def main():
     cv2.imwrite('./tello.jpg', image)
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('--file_path', default= '1.png',
+                    help='sum the integers (default: find the max)')
+    args = parser.parse_args()
+    my_im_path = args.file_path
+    main(my_im_path)
