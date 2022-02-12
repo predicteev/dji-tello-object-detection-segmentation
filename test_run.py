@@ -2,7 +2,7 @@
 import time
 import datetime
 import os
-import tellopy
+#import tellopy
 import numpy
 import av
 import cv2
